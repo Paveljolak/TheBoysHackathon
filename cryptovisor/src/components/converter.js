@@ -33,31 +33,27 @@ const CurrencyConverter = () => {
   };
 
   return (
-    <div>
+    <div className="converter-container">
       <h2>Currency Converter</h2>
-      <div>
+      <div className="converteraha">
         <label htmlFor="crypto">Select Cryptocurrency: </label>
         <select id="crypto" value={selectedCrypto} onChange={handleCryptoChange}>
-          <option value="BTC">Bitcoin</option>
-          <option value="ETH">Ethereum</option>
-          <option value="USDC">USD Coin</option>
-          <option value="SOL">Solana</option>
-          <option value="PEPE">Pepe</option>
-          <option value="DOGE">Dogecoin</option>
-          <option value="FDUSD">First Digital USD</option>
-          <option value="BNB">Binance Coin</option>
-          <option value="XRP">XRP</option>
-          <option value="WLD">Worldcoin</option>
+            <option value="BTC">Bitcoin</option>
+            <option value="ETH">Ethereum</option>
+            <option value="USDC">USD Coin</option>
+            <option value="SOL">Solana</option>
+            <option value="PEPE">Pepe</option>
+            <option value="DOGE">Dogecoin</option>
+            <option value="FDUSD">First Digital USD</option>
+            <option value="BNB">Binance Coin</option>
+            <option value="XRP">XRP</option>
+            <option value="WLD">Worldcoin</option>
         </select>
-      </div>
-      <div>
         <label htmlFor="currency">Select Currency: </label>
         <select id="currency" value={selectedCurrency} onChange={handleCurrencyChange}>
           <option value="USD">USD</option>
           <option value="EUR">EUR</option>
         </select>
-      </div>
-      <div>
         <h3>Conversion Rate:</h3>
         <p>
           1 {selectedCrypto} = {cryptoData[selectedCurrency]} {selectedCurrency}

@@ -14,41 +14,28 @@
   align-items: center;
 }
 
-/* .converter {
+.converter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.converter-container {
-  width: 300px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+.converteraha {
+  border: 1px solid black;
+  padding: 15%;
+  border-radius: 2%;
 }
 
-.select-container {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
+#historical {
+  margin-top: 0%;
+  margin-bottom: 0;
 }
 
-.select-container label {
-  margin-right: 10px;
-
-
-select {
-  width: 100%;
-  padding: 8px;
-  border-radius: 5px;
+#prediction {
+  margin-top: 3%;
+  margin-bottom: -1%;
 }
 
-.conversion-result {
-  margin-top: 20px;
+#cryotiviser {
+  font-size: 35px;
 }
-
-.conversion-result h3 {
-  margin-bottom: 10px;
-} */

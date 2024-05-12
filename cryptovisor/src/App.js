@@ -11,11 +11,14 @@ function App() {
   return (
       <div className="App">
       <header className="App-header">
+        <h1 id="cryotiviser">Cryptoviser</h1>
+        <div className="container">
         <div className="historical">
           <HistoricalData vsCurrency="eur" days={1} onChangeSymbol={setSymbol} />
         </div>
         <div className="tradingSignals">
-        <TradingSignals symbol={symbol} />
+          <TradingSignals symbol={symbol} />
+        </div>
         </div>
         <div className="converter">
           <CurrencyConverter />

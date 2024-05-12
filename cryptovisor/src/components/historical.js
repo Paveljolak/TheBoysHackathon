@@ -44,12 +44,12 @@ const HistoricalData = ({ vsCurrency, days, onChangeSymbol }) => {
 
   return (
     <div>
-      <h2>Historical Data for {changeSymbol} for the last 24h</h2>
+      <h2 id="historical">Historical Data for {changeSymbol} for the last 24h</h2>
       {historicalData && (
         <div className="graph">
           <LineChart
-            width={800}
-            height={400}
+            width={820}
+            height={420}
             data={historicalData.prices}
             margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
           >

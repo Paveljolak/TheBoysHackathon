@@ -45,6 +45,7 @@ const TradingSignals = ({ symbol }) => {
 
   return (
     <div>
+      <h2 id="prediction">Prediction</h2>
       <p>{message}</p>
     </div>
   );
