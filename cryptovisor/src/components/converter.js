@@ -4,6 +4,7 @@ const CurrencyConverter = () => {
   const [cryptoData, setCryptoData] = useState({});
   const [selectedCrypto, setSelectedCrypto] = useState("BTC");
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
+  const [amount, setAmount] = useState(1); // Default amount to convert
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +33,11 @@ const CurrencyConverter = () => {
     setSelectedCurrency(event.target.value);
   };
 
+  const handleAmountChange = (event) => {
+    const newAmount = parseFloat(event.target.value);
+    setAmount(newAmount);
+  };
+
   return (
     <div className="converter-container">
       <h2>Currency Converter</h2>
@@ -53,7 +59,7 @@ const CurrencyConverter = () => {
           <option value="XRP">XRP</option>
           <option value="WLD">Worldcoin</option>
         </select>
-        <label htmlFor="currency">Select Currency: </label>
+        <label htmlFor="currency">Select Currency to convert to:</label>
         <select
           id="currency"
           value={selectedCurrency}
@@ -62,9 +68,21 @@ const CurrencyConverter = () => {
           <option value="USD">USD</option>
           <option value="EUR">EUR</option>
         </select>
-        <h3>Conversion Rate:</h3>
+        {/* Input field for specifying the amount */}
+        <div className="amount">
+          <label htmlFor="amount">Amount: </label>
+          <input
+            type="number"
+            id="amount"
+            value={amount}
+            onChange={handleAmountChange}
+          />
+        </div>
+        {/* Conversion result */}
+        <h3>Conversion Result:</h3>
         <p>
-          1 {selectedCrypto} = {cryptoData[selectedCurrency]} {selectedCurrency}
+          {amount} {selectedCrypto} = {cryptoData[selectedCurrency] * amount}{" "}
+          {selectedCurrency}
         </p>
       </div>
     </div>

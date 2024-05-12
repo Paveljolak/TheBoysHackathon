@@ -45,7 +45,7 @@ const HistoricalData = ({ vsCurrency, days, onChangeSymbol }) => {
   return (
     <div>
       <h2 id="historical">
-        Historical Data for {changeSymbol} for the last 24h
+        Historical data for {changeSymbol} for the last 24h
       </h2>
       {historicalData && (
         <div className="graph">

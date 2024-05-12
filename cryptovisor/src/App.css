@@ -43,23 +43,44 @@ html {
 }
 
 .converter-container {
-  max-width: 350px; /* Adjust maximum width as needed */
-  padding: 15px; /* Add padding for spacing */
-  border: 1px solid; /* Sky blue border */
-  border-radius: 5px;
-  border-radius: 10px; /* Add border radius for rounded corners */
-  background-color: #f9f9f9; /* Background color */
-  color: #000000; /* Text color */
+  max-width: 350px;
+  padding: 15px;
+  border: 1px solid #5bc0de; /* Updated border color */
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #000000;
   text-shadow: 1px 1px 2px rgba(1, 0, 0, 0.5);
-  box-shadow: 5px 4px 8px rgba(0.1, 0.1, 0.1, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Updated box shadow */
 }
-
 .converteraha {
   margin-top: 20px; /* Add margin for spacing */
 }
 
 .converteraha label {
-  margin-right: 10px; /* Add margin between label and select element */
+  margin-right: 10px;
+  font-weight: bold; /* Make labels bold */
+}
+
+.converteraha input[type="number"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333;
+  margin-top: 15px; /* Increased margin-bottom */
+  margin-bottom: -15px; /* Increased margin-bottom */
+  width: 15%; /* Input field takes full width */
+}
+
+.converteraha input[type="number"]:focus {
+  outline: none;
+  border-color: #5bc0de;
+  box-shadow: 0 0 5px #5bc0de; /* Light blue shadow on focus */
+}
+
+.converteraha input[type="number"]:hover {
+  background-color: #e0e0e0; /* Darker background on hover */
 }
 
 .converteraha select {
@@ -69,7 +90,8 @@ html {
   border-radius: 5px; /* Add border radius for rounded corners */
   background-color: #fff; /* Background color */
   color: #333; /* Text color */
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  margin-right: 8px;
 }
 
 .converteraha select:hover {
@@ -117,4 +139,8 @@ html {
 .buttonSelection select:focus {
   outline: none; /* Remove outline on focus */
   border-color: #5bc0de; /* Change border color on focus */
+}
+
+.amount {
+  margin-top: -15px;
 }
