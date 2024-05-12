@@ -22,7 +22,7 @@ const CurrencyConverter = () => {
     };
 
     fetchData();
-  }, [selectedCrypto]);
+  }, [selectedCrypto, selectedCurrency]); // Include selectedCurrency as a dependency
 
   const handleCryptoChange = (event) => {
     setSelectedCrypto(event.target.value);
@@ -37,20 +37,28 @@ const CurrencyConverter = () => {
       <h2>Currency Converter</h2>
       <div className="converteraha">
         <label htmlFor="crypto">Select Cryptocurrency: </label>
-        <select id="crypto" value={selectedCrypto} onChange={handleCryptoChange}>
-            <option value="BTC">Bitcoin</option>
-            <option value="ETH">Ethereum</option>
-            <option value="USDC">USD Coin</option>
-            <option value="SOL">Solana</option>
-            <option value="PEPE">Pepe</option>
-            <option value="DOGE">Dogecoin</option>
-            <option value="FDUSD">First Digital USD</option>
-            <option value="BNB">Binance Coin</option>
-            <option value="XRP">XRP</option>
-            <option value="WLD">Worldcoin</option>
+        <select
+          id="crypto"
+          value={selectedCrypto}
+          onChange={handleCryptoChange}
+        >
+          <option value="BTC">Bitcoin</option>
+          <option value="ETH">Ethereum</option>
+          <option value="USDC">USD Coin</option>
+          <option value="SOL">Solana</option>
+          <option value="PEPE">Pepe</option>
+          <option value="DOGE">Dogecoin</option>
+          <option value="FDUSD">First Digital USD</option>
+          <option value="BNB">Binance Coin</option>
+          <option value="XRP">XRP</option>
+          <option value="WLD">Worldcoin</option>
         </select>
         <label htmlFor="currency">Select Currency: </label>
-        <select id="currency" value={selectedCurrency} onChange={handleCurrencyChange}>
+        <select
+          id="currency"
+          value={selectedCurrency}
+          onChange={handleCurrencyChange}
+        >
           <option value="USD">USD</option>
           <option value="EUR">EUR</option>
         </select>
