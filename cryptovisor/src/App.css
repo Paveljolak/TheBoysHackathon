@@ -2,7 +2,14 @@
   text-align: center;
 }
 
+.historical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .tradingSignals {
-  text-align: center;
-  margin: 5% 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
