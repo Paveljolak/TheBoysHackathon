@@ -9,9 +9,10 @@ import {
   Legend,
 } from "recharts";
 
-const HistoricalData = ({ symbol, vsCurrency, days }) => {
+const HistoricalData = ({ vsCurrency, days, onChangeSymbol }) => {
   const [historicalData, setHistoricalData] = useState(null);
-  const apiURL = `https://api.coingecko.com/api/v3/coins/${symbol}/market_chart?vs_currency=${vsCurrency}&days=${days}`;
+  const [changeSymbol, setChangeSymbol] = useState("bitcoin");
+  const apiURL = `https://api.coingecko.com/api/v3/coins/${changeSymbol}/market_chart?vs_currency=${vsCurrency}&days=${days}`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,11 +34,17 @@ const HistoricalData = ({ symbol, vsCurrency, days }) => {
     return () => {
       // Any clean-up code here, if necessary
     };
-  }, [apiURL, days, symbol, vsCurrency]);
+  }, [apiURL, days, vsCurrency, changeSymbol]);
+
+  const handleSymbolChange = (event) => {
+    const selectedSymbol = event.target.value;
+    setChangeSymbol(selectedSymbol); // Update the symbol state
+    onChangeSymbol(selectedSymbol); // Call the prop function to update symbol in App
+  };
 
   return (
     <div>
-      <h2>Historical Data for {symbol}</h2>
+      <h2>Historical Data for {changeSymbol} for the last 24h</h2>
       {historicalData && (
         <div className="graph">
           <LineChart
@@ -61,17 +68,33 @@ const HistoricalData = ({ symbol, vsCurrency, days }) => {
                 return `${day} ${time}`;
               }}
             />
-            <YAxis domain={[2650, 2750]} dy={-10} />
+            {changeSymbol === "bitcoin" && (
+              <YAxis domain={[55000, 57500]} dy={-10} />
+            )}
+            {changeSymbol === "ethereum" && (
+              <YAxis domain={[2650, 2750]} dy={-10} />
+            )}
             <Tooltip
               labelFormatter={(timestamp) =>
                 new Date(timestamp).toLocaleString()
               }
             />
             <Legend />
-            <Line type="monotone" dataKey="1" stroke="#8884d8" dot={false} />
+            {changeSymbol === "bitcoin" && (
+              <Line type="monotone" dataKey="1" stroke="#FF5733" strokeWidth={2} dot={false} name={changeSymbol} />
+            )}
+            {changeSymbol === "ethereum" && (
+              <Line type="monotone" dataKey="1" stroke="#7B68EE" strokeWidth={2} dot={false} name={changeSymbol} />
+            )}
           </LineChart>
         </div>
       )}
+      <div>
+      <select value={changeSymbol} onChange={handleSymbolChange}>
+          <option value="bitcoin">Bitcoin</option>
+          <option value="ethereum">Ethereum</option>
+        </select>
+      </div>
     </div>
   );
 };
