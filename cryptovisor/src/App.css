@@ -2,10 +2,32 @@
   text-align: center;
 }
 
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  border: 1px solid; /* Sky blue border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  padding: 20px; /* Add padding for spacing */
+  box-shadow: 5px 4px 8px rgba(0.1, 0.1, 0.1, 0.3); /* Add a more pronounced shadow */
+  background-color: #ffffff; /* White background color */
+  color: #000000; /* Text color */
+  text-shadow: 1px 1px 2px rgba(1, 0, 0, 0.5); /* Add shadow to text */
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .historical {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .tradingSignals {
@@ -20,10 +42,43 @@
   align-items: center;
 }
 
+.converter-container {
+  max-width: 350px; /* Adjust maximum width as needed */
+  padding: 15px; /* Add padding for spacing */
+  border: 1px solid; /* Sky blue border */
+  border-radius: 5px;
+  border-radius: 10px; /* Add border radius for rounded corners */
+  background-color: #f9f9f9; /* Background color */
+  color: #000000; /* Text color */
+  text-shadow: 1px 1px 2px rgba(1, 0, 0, 0.5);
+  box-shadow: 5px 4px 8px rgba(0.1, 0.1, 0.1, 0.3);
+}
+
 .converteraha {
-  border: 1px solid black;
-  padding: 15%;
-  border-radius: 2%;
+  margin-top: 20px; /* Add margin for spacing */
+}
+
+.converteraha label {
+  margin-right: 10px; /* Add margin between label and select element */
+}
+
+.converteraha select {
+  padding: 8px; /* Add padding for spacing */
+  font-size: 16px; /* Adjust font size */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  background-color: #fff; /* Background color */
+  color: #333; /* Text color */
+  margin-bottom: 5px;
+}
+
+.converteraha select:hover {
+  background-color: #f0f0f0; /* Darker background color on hover */
+}
+
+.converteraha select:focus {
+  outline: none; /* Remove outline on focus */
+  border-color: #5bc0de; /* Change border color on focus */
 }
 
 #historical {
@@ -37,5 +92,29 @@
 }
 
 #cryotiviser {
-  font-size: 35px;
+  font-size: 3rem;
+  margin-top: 2rem;
+  color: #5bc0de; /* Sky blue color for heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  padding: 0;
+}
+
+.buttonSelection select {
+  appearance: none; /* Remove default dropdown arrow */
+  padding: 10px; /* Add padding for spacing */
+  font-size: 16px; /* Adjust font size */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  background-color: #f0f0f0; /* Background color */
+  color: #333; /* Text color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.buttonSelection select:hover {
+  background-color: #e0e0e0; /* Darker background color on hover */
+}
+
+.buttonSelection select:focus {
+  outline: none; /* Remove outline on focus */
+  border-color: #5bc0de; /* Change border color on focus */
 }

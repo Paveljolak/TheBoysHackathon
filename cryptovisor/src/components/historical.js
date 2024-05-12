@@ -44,7 +44,9 @@ const HistoricalData = ({ vsCurrency, days, onChangeSymbol }) => {
 
   return (
     <div>
-      <h2 id="historical">Historical Data for {changeSymbol} for the last 24h</h2>
+      <h2 id="historical">
+        Historical Data for {changeSymbol} for the last 24h
+      </h2>
       {historicalData && (
         <div className="graph">
           <LineChart
@@ -81,16 +83,30 @@ const HistoricalData = ({ vsCurrency, days, onChangeSymbol }) => {
             />
             <Legend />
             {changeSymbol === "bitcoin" && (
-              <Line type="monotone" dataKey="1" stroke="#FF5733" strokeWidth={2} dot={false} name={changeSymbol} />
+              <Line
+                type="monotone"
+                dataKey="1"
+                stroke="#FF5733"
+                strokeWidth={2}
+                dot={false}
+                name={changeSymbol}
+              />
             )}
             {changeSymbol === "ethereum" && (
-              <Line type="monotone" dataKey="1" stroke="#7B68EE" strokeWidth={2} dot={false} name={changeSymbol} />
+              <Line
+                type="monotone"
+                dataKey="1"
+                stroke="#7B68EE"
+                strokeWidth={2}
+                dot={false}
+                name={changeSymbol}
+              />
             )}
           </LineChart>
         </div>
       )}
-      <div>
-      <select value={changeSymbol} onChange={handleSymbolChange}>
+      <div className="buttonSelection">
+        <select value={changeSymbol} onChange={handleSymbolChange}>
           <option value="bitcoin">Bitcoin</option>
           <option value="ethereum">Ethereum</option>
         </select>
